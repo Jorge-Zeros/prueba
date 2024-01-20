@@ -1,0 +1,5 @@
+# Ignore node_modules in any directory
+**/node_modules/
+
+# variables ejemplo PORT=3050, CORS_ORIGIN=http://localhost:5000, ATLAS_URI=mongodb+srv://161534....
+**/.env
