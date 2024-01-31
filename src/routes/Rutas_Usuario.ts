@@ -13,6 +13,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Get a single Estudiante by email
+router.get("/email/:email", async (req, res) => {
+  try {
+    const user = await Estudiante.findOne({ email: req.params.email });
+    if (user == null) {
+      return res.status(404).json({ message: "Cannot find user" });
+    }
+    res.status(200).json(user);
+  } catch (err: any) {
+    return res.status(500).json({ message: err.message });
+  }
+});
+
 // Get a single user
 router.get("/:id", async (req, res) => {
   try {
