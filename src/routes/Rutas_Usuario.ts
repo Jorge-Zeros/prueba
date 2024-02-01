@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 // Get a single Estudiante by email
 router.get("/email/:email", async (req, res) => {
   try {
-    const user = await Estudiante.findOne({ email: req.params.email });
+    const user = await Usuario.findOne({ email: req.params.email });
     if (user == null) {
       return res.status(404).json({ message: "Cannot find user" });
     }
