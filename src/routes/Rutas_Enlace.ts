@@ -6,8 +6,8 @@ const router = express.Router();
 // Get a list of all Tutores
 router.get("/", async (req, res) => {
   try {
-    const users = await Enlace.find();
-    res.status(200).json(users);
+    const enlaces = await Enlace.find();
+    res.status(200).json(enlaces);
   } catch (err: any) {
     res.status(500).json({ message: err.message });
   }
@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
       nombre: req.body.nombre,
       url: req.body.url,
       descripcion: req.body.descripcion,
-      fecha: req.body.fecha,
+      fecha: new Date(), // Esto creará una fecha que representa el momento actual
     });
     const newEnlace = await enlace.save();
     res.status(201).json(newEnlace);
