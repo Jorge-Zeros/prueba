@@ -4,10 +4,11 @@ import "./loadEnvironment.js";
 // index.ts o app.ts
 import "./src/db/connection";
 // cargar rutas
-import userRoutes from "./src/routes/Rutas_Usuario";
-import estudianteRoutes from "./src/routes/Rutas_Estudiante";
-import tutorRoutes from "./src/routes/Rutas_Tutor";
-import directorRoutes from "./src/routes/Rutas_Director";
+// import userRoutes from "./src/routes/Rutas_Usuario";
+// import estudianteRoutes from "./src/routes/Rutas_Estudiante";
+// import tutorRoutes from "./src/routes/Rutas_Tutor";
+// import directorRoutes from "./src/routes/Rutas_Director";
+import enlaceRoutes from "./src/routes/Rutas_Enlace";
 // Cargar usuarios
 
 const PORT = process.env.PORT || 3600;
@@ -23,11 +24,11 @@ app.use(cors());
 app.use(express.json());
 
 // Load the routes
-app.use("/usuarios", userRoutes);
-app.use("/estudiantes", estudianteRoutes);
-app.use("/tutores", tutorRoutes);
-app.use("/directores", directorRoutes);
-
+// app.use("/usuarios", userRoutes);
+// app.use("/estudiantes", estudianteRoutes);
+// app.use("/tutores", tutorRoutes);
+// app.use("/directores", directorRoutes);
+app.use("/enlaces", enlaceRoutes);
 // Middleware para manejar errores 404 (Recurso no encontrado)
 app.use((req, res, next) => {
   res.status(404).send("Sorry, that route doesn't exist.");
