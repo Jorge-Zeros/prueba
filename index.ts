@@ -1,4 +1,5 @@
 import express from "express";
+import serverless from "serverless-http";
 import cors from "cors";
 import "./loadEnvironment";
 // index.ts o app.ts
@@ -12,13 +13,7 @@ import enlaceRoutes from "./src/routes/Rutas_Enlace";
 // Cargar usuarios
 
 const PORT = process.env.PORT || 3600;
-const CORS_ORIGIN = process.env.CORS_ORIGIN;
 const app = express();
-
-const corsOptions: cors.CorsOptions = {
-  origin: CORS_ORIGIN,
-  optionsSuccessStatus: 200,
-};
 
 app.use(cors());
 app.use(express.json());

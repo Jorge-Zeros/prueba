@@ -7,3 +7,5 @@
 # Ignore build directory
 **/dist/
 **/dist1/
+# Local Netlify folder
+.netlify

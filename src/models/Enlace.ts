@@ -11,6 +11,6 @@ const enlaceEsquema = new mongoose.Schema({
   // satisfacción o cálificación
 });
 
-const Enlace = mongoose.model("Tutorial", enlaceEsquema);
+const Enlace = mongoose.model("enlaces", enlaceEsquema);
 
 export default Enlace;
