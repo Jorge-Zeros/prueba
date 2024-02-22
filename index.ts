@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import "./loadEnvironment.js";
+import "./loadEnvironment";
 // index.ts o app.ts
 import "./src/db/connection";
 // cargar rutas
